@@ -1,20 +1,24 @@
 
 const newQuoteBtn = document.getElementById('new-quote');
+const quoteContainer = document.getElementById('quote-container');
 const displayQuote = document.getElementById('quote');
 const displayAuthor = document.getElementById('author');
 const copyBtn = document.getElementById('copy');
 const copyText = document.getElementById('copy-text');
+const loader = document.querySelector('.loader');
 
 const requestQuote = `${window.origin}/api`;
 
 let textToCopy = '';
 
 window.addEventListener('load', async()=>{
+    loading();
     const quote = await getQuote();
     updateDisplay(quote);
 })
 
 newQuoteBtn.addEventListener('click', async()=>{
+    loading();
     const quote = await getQuote();
     updateDisplay(quote);
     
@@ -33,7 +37,18 @@ copyBtn.addEventListener('click', async()=>{
 })
 
 
-/* Helper functions */
+
+/* functions */
+
+function loading(){
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
+
+function loaded(){
+    loader.hidden = true;
+    quoteContainer.hidden = false;
+}
 
 function updateDisplay(quote){
     if(quote.quote.length > 150){
@@ -44,6 +59,7 @@ function updateDisplay(quote){
     textToCopy = quote.quote;
     displayQuote.innerText = quote.quote;
     displayAuthor.innerText = quote.author;
+    loaded();
 }
 
 
