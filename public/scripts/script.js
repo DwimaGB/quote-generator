@@ -41,13 +41,13 @@ copyBtn.addEventListener('click', async()=>{
 /* functions */
 
 function loading(){
-    loader.hidden = false;
-    quoteContainer.hidden = true;
+    loader.style.display = 'block';
+    quoteContainer.style.display = 'none';
 }
 
 function loaded(){
-    loader.hidden = true;
-    quoteContainer.hidden = false;
+    loader.style.display = 'none';
+    quoteContainer.style.display = 'block';
 }
 
 function updateDisplay(quote){
