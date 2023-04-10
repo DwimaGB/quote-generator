@@ -83,7 +83,21 @@ button:active{
         margin: auto 10px;
     }
 
+    .fa-quote-left{
+        font-size: 2.5rem
+    }
+
     .quote-text{
-        font-size: 2.5rem;
+        font-size: 1.825rem;
+    }
+
+    .quote-author{
+        font-size: 1.125rem;
+    }
+
+    .button-container{
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
     }
 }
