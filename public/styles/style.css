@@ -25,6 +25,8 @@ body{
     border-radius: 10px;
     background-color: hsla(0, 0%, 100%, 0.4);
     box-shadow: 0 10px 10px 10px hsla(0, 0%, 0%, 0.2);
+
+    display: hidden;
 }
 
 
